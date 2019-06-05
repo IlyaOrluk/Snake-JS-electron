@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(22, 61, 37) url(../bg2.jpg) no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Dokdo', cursive;
+}
+
+.map {
+    display: flex;
+    flex-wrap: wrap;
+    width: 520px;
+    height: 520px;
+    border: 1px solid #000;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(35, 88, 33);
+    background: rgba(0, 0, 0, 0.919);
+}
+.snake {
+    background: rgba(50, 255, 170);
+}
+.food {
+    background: rgb(242, 255, 125);
+}
+.select-bg{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.bg-first{
+    width: 150px;
+    height: 90px;
+    margin: 1vh;
+    border: 1px solid #333;
+    cursor: pointer;
+    background: url(../bg.jpg) no-repeat center / cover;
+    transition: 1s;
+}
+.bg-second{
+    width: 150px;
+    height: 90px;
+    margin: 1vh;
+    border: 1px solid #333;
+    cursor: pointer;
+    background: url(../bg2.jpg) no-repeat center / cover;
+    transition: 1s;
+}
+
+.bg-first:hover, .bg-second:hover {
+    border: 1px solid #fff;
+}
+.gameover{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    font-size: 90px;
+    color: rgb(142, 255, 97);
+    cursor: default;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 95, 29, 0.342);
+    text-align: center;
+}
+.gameover h1{
+    color: rgb(226, 255, 97);
+    animation: fadeInDown .5s ease-in;
+}
+.gameover h2{
+    cursor: pointer;
+    color: rgb(226, 255, 97);
+    animation: fadeIn .5s ease-in;
+}
+.score{
+    position: absolute;
+    top: 12%;
+    left: 56%;
+    font-size: 50px;
+    color: rgb(202, 255, 153);
+    background: rgba(0, 0, 0, 0.733);
+    padding: 0 20px;
+    border-radius: 15px;
+}
+.high-record {
+    font-size: 99px;
+    color: rgb(190, 255, 0);
+}
+#restart{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+    animation: pulse 1s infinite;
+}
+#restart:hover{
+    color: rgb(242, 255, 167);
+}
+
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
